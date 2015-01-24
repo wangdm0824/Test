@@ -14,6 +14,7 @@ http://ptc.35.com/?p=552
 --reduce函数接受两个参数，doc表示正在迭代的当前文档，prev表示累加器文档
 
 
+
 db.English.insert({'_id':1,'name':'user_1','age':1})
 db.English.insert({'_id':2,'name':'user_2','age':2})
 db.English.insert({'_id':3,'name':'user_3','age':3})
