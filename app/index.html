@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app ng-controller="OrgList">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../Scripts/angular-1.0.1.min.js"></script>
+    <script src="../Scripts/controllers.js"></script>
+    <!--<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>-->
+    <title>{{query}}</title>
+</head>
+<body>
+    <span>绑定的表达式是个字符串：</span>
+    Hello {{'World'}}!
+    <br />
+    <span>绑定一个动态表达式：</span>
+    Your Name:
+    <input type="text" ng-model="Name" placeholder="wangdm">
+    <hr>
+    Hello {{Name || 'World'}}!
+
+    <p>1 + 2 = {{ 1 + 2 }}</p>
+
+
+    <p>机构数量: {{Schools.length}}</p>
+    <ul>
+        <li ng-repeat="org in Schools">{{org.name}}--{{org.snippet}}
+            <p ng-repeat="course in Courses"><span>{{course.id}}---{{course.name}}</span></p>
+        </li>
+    </ul>
+
+    Search:
+    <input ng-model="query">
+    <table>
+        <tr>
+            <th>行号</th>
+            <th>名称</th>
+        </tr>
+        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9] | filter:query">
+            <td>{{i}}</td>
+            <td>{{'Name'+i}}</td>
+        </tr>
+    </table>
+
+    <!-- ng-app:告诉AngularJS处理整个HTML页并引导应用   ng-app指令标记了AngularJS脚本的作用域-->
+
+</body>
+</html>

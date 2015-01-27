@@ -122,9 +122,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="1.txt" />
-    <Content Include="100.html" />
+    <Content Include="app\index.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-1.0.1.min.js" />
+    <Content Include="Scripts\controllers.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
