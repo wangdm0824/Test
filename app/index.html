@@ -5,7 +5,7 @@
     <script src="../Scripts/angular-1.0.1.min.js"></script>
     <script src="../Scripts/controllers.js"></script>
     <!--<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>-->
-    <title>{{query}}</title>
+    <title ng-bind-template="{{Title}}：{{query}}">{{Title}}</title>
 </head>
 <body>
     <span>绑定的表达式是个字符串：</span>
@@ -20,9 +20,14 @@
     <p>1 + 2 = {{ 1 + 2 }}</p>
 
 
+    Sort by:
+    <select ng-model="orderProp">
+        <option value="name">按name排序</option>
+        <option value="age">按age排序</option>
+    </select>
     <p>机构数量: {{Schools.length}}</p>
     <ul>
-        <li ng-repeat="org in Schools">{{org.name}}--{{org.snippet}}
+        <li ng-repeat="org in Schools | orderBy:orderProp">{{org.name}}--{{org.snippet}}
             <p ng-repeat="course in Courses"><span>{{course.id}}---{{course.name}}</span></p>
         </li>
     </ul>
@@ -34,7 +39,7 @@
             <th>行号</th>
             <th>名称</th>
         </tr>
-        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9] | filter:query">
+        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,22] | filter:query">
             <td>{{i}}</td>
             <td>{{'Name'+i}}</td>
         </tr>

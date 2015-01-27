@@ -1,15 +1,18 @@
 ﻿
-function OrgList($scope) {
+function OrgList($scope, $http) {
 
     $scope.Schools = [{
         "name": "大智学校",
-        "snippet": "大智学校123"
+        "snippet": "大智学校123",
+        "age": 0
     }, {
         "name": "齐鲁医院",
-        "snippet": "齐鲁医院123"
+        "snippet": "齐鲁医院123",
+        "age": 2
     }, {
         "name": "东方豪客",
-        "snippet": "东方豪客123"
+        "snippet": "东方豪客123",
+        "age": 1
     }];
 
     $scope.Courses = [{
@@ -24,4 +27,10 @@ function OrgList($scope) {
     }];
 
     $scope.Title = "AngularJS";
+
+    $http.get('data.json').success(function (data) {
+        $scope.Schools = data.splice(0, 5);
+    });
 }
+
+OrgList.$inject = ['$scope', '$http'];
